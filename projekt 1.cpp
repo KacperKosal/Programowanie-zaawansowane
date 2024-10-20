@@ -41,7 +41,29 @@ public:
             tail = newNode;
         }
     }
+    // Dodaj element pod wskazany indeks
+void addAtIndex(int index, int value) {
+    if (index == 0) {
+        addAtHead(value);
+        return;
+    }
 
+    Node* newNode = new Node(value);
+    Node* temp = head;
+    for (int i = 0; i < index - 1 && temp != nullptr; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == nullptr || temp->next == nullptr) {
+        addAtTail(value);
+    }
+    else {
+        newNode->next = temp->next;
+        newNode->prev = temp;
+        temp->next->prev = newNode;
+        temp->next = newNode;
+    }
+}
     // Usuń element z początku listy
     void removeFront() {
         if (head == nullptr) {
@@ -75,7 +97,20 @@ public:
         }
         delete temp;
     }
+    // Usuń element z końca listy
+void removeFromTail() {
+    if (tail == nullptr) return;
 
+    Node* temp = tail;
+    if (head == tail) {
+        head = tail = nullptr;
+    }
+    else {
+        tail = tail->prev;
+        tail->next = nullptr;
+    }
+    delete temp;
+}
     // Wyświetl listę od początku
     void display() {
         Node* current = head;
