@@ -97,28 +97,20 @@ void addAtIndex(int index, int value) {
         }
         delete temp;
     }
-    // Usuń element pod wskazanym indeksem
-void removeAtIndex(int index) {
-    if (index == 0) {
-        removeFromHead();
-        return;
-    }
+    // Usuń element z końca listy
+void removeFromTail() {
+    if (tail == nullptr) return;
 
-    Node* temp = head;
-    for (int i = 0; i < index && temp != nullptr; i++) {
-        temp = temp->next;
-    }
-
-    if (temp == nullptr || temp == tail) {
-        removeFromTail();
+    Node* temp = tail;
+    if (head == tail) {
+        head = tail = nullptr;
     }
     else {
-        temp->prev->next = temp->next;
-        temp->next->prev = temp->prev;
-        delete temp;
+        tail = tail->prev;
+        tail->next = nullptr;
     }
+    delete temp;
 }
-
     // Wyświetl listę od początku
     void display() {
         Node* current = head;
@@ -146,25 +138,6 @@ void removeAtIndex(int index) {
         }
         std::cout << "\n";
     }
-    // Wyświetl następny element (od danego węzła)
-void displayNext(Node* node) {
-    if (node != nullptr && node->next != nullptr) {
-        cout << "Następny element: " << node->next->data << endl;
-    }
-    else {
-        cout << "Brak następnego elementu." << endl;
-    }
-}
-
-// Wyświetl poprzedni element (od danego węzła)
-void displayPrev(Node* node) {
-    if (node != nullptr && node->prev != nullptr) {
-        cout << "Poprzedni element: " << node->prev->data << endl;
-    }
-    else {
-        cout << "Brak poprzedniego elementu." << endl;
-    }
-}
 
     // Czyszczenie całej listy
     void clear() {
@@ -183,13 +156,11 @@ void displayPrev(Node* node) {
 int main() {
     DoublyLinkedList list;
 
-    // Dodawanie elementów
     list.addFront(10);
     list.addFront(20);
     list.addBack(30);
     list.display();         // Powinno wyświetlić: 20 10 30
 
-    // Wyświetlanie listy
     list.removeFront();
     list.display();         // Powinno wyświetlić: 10 30
 
