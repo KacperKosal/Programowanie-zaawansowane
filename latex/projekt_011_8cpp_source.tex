@@ -1,0 +1,181 @@
+\doxysection{projekt 1.cpp}
+\hypertarget{projekt_011_8cpp_source}{}\label{projekt_011_8cpp_source}\mbox{\hyperlink{projekt_011_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00003}00003\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node}{Node}}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_node_a87c003c9f600e3fc58e6e90835f0b605}{data}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ \mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ \mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00008}\mbox{\hyperlink{struct_node_a2c5fe4ecef1aa9623d740582b1425c16}{00008}}\ \ \ \ \ \mbox{\hyperlink{struct_node_a2c5fe4ecef1aa9623d740582b1425c16}{Node}}(\textcolor{keywordtype}{int}\ value)\ :\ \mbox{\hyperlink{struct_node_a87c003c9f600e3fc58e6e90835f0b605}{data}}(value),\ \mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}}(nullptr),\ \mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}(nullptr)\ \{\}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00009}00009\ \};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00011}00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList}}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ head;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ tail;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00017}\mbox{\hyperlink{class_doubly_linked_list_a64b759ca82ca4b7767f42ba5691575f5}{00017}}\ \ \ \ \ \mbox{\hyperlink{class_doubly_linked_list_a64b759ca82ca4b7767f42ba5691575f5}{DoublyLinkedList}}()\ :\ head(nullptr),\ tail(nullptr)\ \{\}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Dodaj\ element\ na\ początek\ listy}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00020}\mbox{\hyperlink{class_doubly_linked_list_a7ea38c2c8416139691d0047b6ebc7019}{00020}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a7ea38c2c8416139691d0047b6ebc7019}{addFront}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ newNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node}}(value);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})\ \{\ \textcolor{comment}{//\ Gdy\ lista\ jest\ pusta}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ tail\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ =\ head;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ head-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}}\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Dodaj\ element\ na\ koniec\ listy}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00033}\mbox{\hyperlink{class_doubly_linked_list_aa87f3c47abead8da928eaf1196f7f214}{00033}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_aa87f3c47abead8da928eaf1196f7f214}{addBack}}(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ newNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node}}(value);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tail\ ==\ \textcolor{keyword}{nullptr})\ \{\ \textcolor{comment}{//\ Gdy\ lista\ jest\ pusta}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ tail\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}}\ =\ tail;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Dodaj\ element\ pod\ wskazany\ indeks}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00045}\mbox{\hyperlink{class_doubly_linked_list_a300a92a62e954dbd79b87e6e54a882ab}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a300a92a62e954dbd79b87e6e54a882ab}{addAtIndex}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ addAtHead(value);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ newNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node}}(value);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ temp\ =\ head;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ index\ -\/\ 1\ \&\&\ temp\ !=\ \textcolor{keyword}{nullptr};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ temp\ =\ temp-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ ==\ \textcolor{keyword}{nullptr}\ ||\ temp-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ addAtTail(value);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ newNode-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ =\ temp-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ newNode-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}}\ =\ temp;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ temp-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}}\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ temp-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ Usuń\ element\ z\ początku\ listy}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00068}\mbox{\hyperlink{class_doubly_linked_list_a7a33b2eced983f382198036732a57a00}{00068}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a7a33b2eced983f382198036732a57a00}{removeFront}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Lista\ jest\ pusta,\ nie\ można\ usunąć\ elementu.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ temp\ =\ head;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ tail)\ \{\ \textcolor{comment}{//\ Gdy\ w\ liście\ jest\ tylko\ jeden\ element}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ tail\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ head-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ head-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ Usuń\ element\ z\ końca\ listy}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00085}\mbox{\hyperlink{class_doubly_linked_list_ad4e1412f46ae97c999b18330622093aa}{00085}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_ad4e1412f46ae97c999b18330622093aa}{removeBack}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tail\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Lista\ jest\ pusta,\ nie\ można\ usunąć\ elementu.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ temp\ =\ tail;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ tail)\ \{\ \textcolor{comment}{//\ Gdy\ w\ liście\ jest\ tylko\ jeden\ element}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ head\ =\ tail\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ tail\ =\ tail-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ tail-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//\ Usuń\ element\ z\ końca\ listy}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00101}\mbox{\hyperlink{class_doubly_linked_list_a84e938e757c482b4b5b990f34b0e90ff}{00101}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a84e938e757c482b4b5b990f34b0e90ff}{removeFromTail}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (tail\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ temp\ =\ tail;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{if}\ (head\ ==\ tail)\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ head\ =\ tail\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ tail\ =\ tail-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ tail-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//\ Wyświetl\ listę\ od\ początku}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00115}\mbox{\hyperlink{class_doubly_linked_list_a5ff883860c056332038c50d36d37cd9d}{00115}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a5ff883860c056332038c50d36d37cd9d}{display}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ head;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Lista\ jest\ pusta.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ current-\/>\mbox{\hyperlink{struct_node_a87c003c9f600e3fc58e6e90835f0b605}{data}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>\mbox{\hyperlink{struct_node_ac04749ecfcee79224cfbfa0d9c777902}{next}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{comment}{//\ Wyświetl\ listę\ w\ odwrotnej\ kolejności}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00129}\mbox{\hyperlink{class_doubly_linked_list_a5b3f78265366e37a05c3b2fe61d17911}{00129}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a5b3f78265366e37a05c3b2fe61d17911}{displayReverse}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ tail;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Lista\ jest\ pusta.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ current-\/>\mbox{\hyperlink{struct_node_a87c003c9f600e3fc58e6e90835f0b605}{data}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ current-\/>\mbox{\hyperlink{struct_node_acb2eac44fd1da2ad95a7da88ddb548ee}{prev}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{comment}{//\ Czyszczenie\ całej\ listy}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00143}\mbox{\hyperlink{class_doubly_linked_list_a721a85d80d21942c74a5b834f8e1d08b}{00143}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_doubly_linked_list_a721a85d80d21942c74a5b834f8e1d08b}{clear}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (head\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_doubly_linked_list_a7a33b2eced983f382198036732a57a00}{removeFront}}();}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{comment}{//\ Destruktor,\ aby\ zwolnić\ pamięć}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00150}\mbox{\hyperlink{class_doubly_linked_list_abe3231c8ee3dd956b5261c4148102967}{00150}}\ \ \ \ \ \mbox{\hyperlink{class_doubly_linked_list_abe3231c8ee3dd956b5261c4148102967}{\string~DoublyLinkedList}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_doubly_linked_list_a721a85d80d21942c74a5b834f8e1d08b}{clear}}();}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00153}00153\ \};}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00155}00155\ \textcolor{comment}{//\ Testowanie\ klasy\ w\ funkcji\ main}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00156}\mbox{\hyperlink{projekt_011_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00156}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{projekt_011_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00157}00157\ \ \ \ \ \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList}}\ list;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00159}00159\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a7ea38c2c8416139691d0047b6ebc7019}{addFront}}(10);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00160}00160\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a7ea38c2c8416139691d0047b6ebc7019}{addFront}}(20);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00161}00161\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_aa87f3c47abead8da928eaf1196f7f214}{addBack}}(30);}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00162}00162\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a5ff883860c056332038c50d36d37cd9d}{display}}();\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Powinno\ wyświetlić:\ 20\ 10\ 30}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00164}00164\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a7a33b2eced983f382198036732a57a00}{removeFront}}();}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00165}00165\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a5ff883860c056332038c50d36d37cd9d}{display}}();\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Powinno\ wyświetlić:\ 10\ 30}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00167}00167\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_ad4e1412f46ae97c999b18330622093aa}{removeBack}}();}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00168}00168\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a5ff883860c056332038c50d36d37cd9d}{display}}();\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Powinno\ wyświetlić:\ 10}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00170}00170\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a721a85d80d21942c74a5b834f8e1d08b}{clear}}();}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00171}00171\ \ \ \ \ list.\mbox{\hyperlink{class_doubly_linked_list_a5ff883860c056332038c50d36d37cd9d}{display}}();\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Powinno\ wyświetlić:\ Lista\ jest\ pusta.}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00174}00174\ \}}
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{projekt_011_8cpp_source_l00176}00176\ 12345}
+
+\end{DoxyCode}
